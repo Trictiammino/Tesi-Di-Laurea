@@ -1,0 +1,4 @@
+model	nDCG	ACLT	ARP	Precision	ItemCoverage	EPC	Gini
+ItemKNN_nn=5_sim=cosine_imp=standard_bin=False_shrink=0_norm=True_asymalpha=_tvalpha=_tvbeta=_rweights=	0.6291871618104743	946.7533333333333	11.558032222222222	0.006384444444444445	4094.0	0.012287037454087728	0.7588433650948774
+ItemKNN_nn=10_sim=cosine_imp=standard_bin=False_shrink=0_norm=True_asymalpha=_tvalpha=_tvbeta=_rweights=	0.6116974149331846	946.07	11.655564444444444	0.006488888888888889	4094.0	0.01233443705413126	0.7597348752612862
+ItemKNN_nn=15_sim=cosine_imp=standard_bin=False_shrink=0_norm=True_asymalpha=_tvalpha=_tvbeta=_rweights=	0.5863356518823827	946.64	11.716376666666667	0.006523333333333335	4094.0	0.012118013591320314	0.7614362369356897

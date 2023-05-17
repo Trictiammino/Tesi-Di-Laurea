@@ -1,0 +1,130 @@
+[
+    {
+        "default_validation_metric": "nDCG",
+        "default_validation_cutoff": 3000,
+        "rel_threshold": 0
+    },
+    {
+        "meta": {
+            "hyper_max_evals": 4,
+            "hyper_opt_alg": "rand",
+            "save_recs": true
+        },
+        "recommender": "BPRMF_seed=42_e=30_bs=1_f=10_lr=0$01_bias_reg=0_u_reg=0$01_pos_i_reg=0$01_neg_i_reg=0$00025_up_neg_i_f=True_up_u=True_up_i=True_up_b=True",
+        "configuration": {
+            "lr": 0.01,
+            "batch_size": 256,
+            "epochs": 30,
+            "bias_regularization": 0,
+            "user_regularization": 0.01,
+            "positive_item_regularization": 0.01,
+            "negative_item_regularization": 0.00025,
+            "update_negative_item_factors": true,
+            "update_users": true,
+            "update_items": true,
+            "update_bias": true,
+            "name": "BPRMF_seed=42_e=30_bs=1_f=10_lr=0$01_bias_reg=0_u_reg=0$01_pos_i_reg=0$01_neg_i_reg=0$00025_up_neg_i_f=True_up_u=True_up_i=True_up_b=True",
+            "best_iteration": 30
+        }
+    },
+    {
+        "meta": {
+            "hyper_max_evals": 12,
+            "hyper_opt_alg": "tpe",
+            "save_recs": true
+        },
+        "recommender": "MultiVAE_seed=42_e=20_bs=128_intermediate_dim=500_latent_dim=300_reg_lambda=10_lr=0$01_dropout_pkeep=0$0",
+        "configuration": {
+            "lr": 0.01,
+            "epochs": 20,
+            "batch_size": 128,
+            "intermediate_dim": 500,
+            "latent_dim": 300,
+            "dropout_pkeep": 1,
+            "reg_lambda": 10,
+            "name": "MultiVAE_seed=42_e=20_bs=128_intermediate_dim=500_latent_dim=300_reg_lambda=10_lr=0$01_dropout_pkeep=0$0",
+            "best_iteration": 20
+        }
+    },
+    {
+        "meta": {
+            "hyper_max_evals": 2,
+            "hyper_opt_alg": "tpe",
+            "save_recs": true
+        },
+        "recommender": "NeuMF_seed=42_e=20_bs=512_lr=0$0006216443713932542_mffactors=11_drop=0_mftrain=True_mlptrain=True_m=0",
+        "configuration": {
+            "lr": 0.0006216443713932542,
+            "batch_size": 512,
+            "epochs": 20,
+            "mf_factors": 11.0,
+            "mlp_factors": 16,
+            "mlp_hidden_size": [
+                64,
+                32,
+                16
+            ],
+            "prob_keep_dropout": 0.2,
+            "is_mf_train": true,
+            "is_mlp_train": true,
+            "name": "NeuMF_seed=42_e=20_bs=512_lr=0$0006216443713932542_mffactors=11_drop=0_mftrain=True_mlptrain=True_m=0",
+            "best_iteration": 18
+        }
+    },
+    {
+        "meta": {
+            "hyper_max_evals": 3,
+            "hyper_opt_alg": "random",
+            "verbose": true,
+            "save_recs": true
+        },
+        "recommender": "Random_seed=42",
+        "configuration": {
+            "seed": 42,
+            "name": "Random_seed=42"
+        }
+    },
+    {
+        "meta": {
+            "hyper_opt_alg": "grid",
+            "save_recs": true
+        },
+        "recommender": "ItemKNN_nn=5_sim=cosine_imp=standard_bin=False_shrink=0_norm=True_asymalpha=_tvalpha=_tvbeta=_rweights=",
+        "configuration": {
+            "neighbors": 5,
+            "similarity": "cosine",
+            "name": "ItemKNN_nn=5_sim=cosine_imp=standard_bin=False_shrink=0_norm=True_asymalpha=_tvalpha=_tvbeta=_rweights="
+        }
+    },
+    {
+        "meta": {
+            "save_recs": true
+        },
+        "recommender": "FunkSVD_seed=42_e=2_bs=49337_factors=10_lr=0$001_reg_w=0$1_reg_b=0$001",
+        "configuration": {
+            "hyper_opt": {
+                "strategy": "hyperopt",
+                "max_evals": 10,
+                "space": {
+                    "factors": [
+                        "uniform",
+                        10,
+                        30
+                    ],
+                    "learning_rate": [
+                        "uniform",
+                        0.001,
+                        0.1
+                    ],
+                    "regularization": [
+                        "uniform",
+                        0.001,
+                        0.1
+                    ]
+                }
+            },
+            "name": "FunkSVD_seed=42_e=2_bs=49337_factors=10_lr=0$001_reg_w=0$1_reg_b=0$001",
+            "best_iteration": 2
+        }
+    }
+]
