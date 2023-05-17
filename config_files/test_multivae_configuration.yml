@@ -1,0 +1,20 @@
+experiment:
+  gpu: 1
+  path_output_rec_performance: C:/Users/ReadyToUse/PycharmProjects/pythonProject/results/test_results/rec_performance
+
+  dataset: artgraph
+  data_config:
+    strategy: fixed
+    train_path: C:/Users/ReadyToUse/PycharmProjects/pythonProject/results/artgraph/valutation_file/MultiVAE/train.tsv
+    test_path: C:/Users/ReadyToUse/PycharmProjects/pythonProject/results/artgraph/splitting/test_set_positive/test.tsv
+
+  evaluation:
+    simple_metrics: [MAP, Precision, MAR, Recall, F1, nDCG, Gini, ItemCoverage, EFD, EPC]
+    paired_ttest: True
+    wilcoxon_test: False
+
+  models:
+    ProxyRecommender:
+      path: C:/Users/ReadyToUse/PycharmProjects/pythonProject/results/artgraph/recs/MultiVAE_seed=42_e=20_bs=128_intermediate_dim=500_latent_dim=300_reg_lambda=10_lr=0$01_dropout_pkeep=0$0_it=20.tsv
+
+  top_k: 5
